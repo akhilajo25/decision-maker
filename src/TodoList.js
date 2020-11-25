@@ -50,6 +50,13 @@ class TodoList extends Component {
 			assignedTask:finalAssTask
 		});
 	}
+
+	deleteAll(){
+		
+		this.setState({
+			items:[]
+		});
+	}
 	render(){
 		const enabled = ((this.state.items).length)>0;
 		return(
@@ -58,7 +65,12 @@ class TodoList extends Component {
 			  <div className="header">
 				  <h1>Super Decision Maker</h1>
 				  <p>Confused?? Put your choices in the hands of this app</p>
-			
+				  <div><h4>Your Options</h4><button 
+				  
+				  onClick={() => this.deleteAll()}
+				  >
+					  Remove all
+					</button></div>
 				  <button 
 				  disabled={!enabled}
 				  onClick={() => this.generateRandomtask()}

@@ -1,32 +1,36 @@
-import React, {Component} from "react";
+import React, { Component } from "react";
 
 class TodoItems extends Component {
-	constructor(props){
+	constructor(props) {
 		super(props);
 		this.createTasks = this.createTasks.bind(this);
 	}
-	createTasks(item){
+	createTasks(item) {
 		return <li onClick={() => this.delete(item.key)} key={item.key}>{item.text}</li>
 	}
-	delete(key){
+	delete(key) {
 		this.props.delete(key);
 	}
-	render(){
+
+	
+	render() {
 		var todoEntries = this.props.entries;
+		console.log("the toofooo",todoEntries)
 		var listItems = todoEntries.map(this.createTasks);
 		//var aa = this.props.doing;
 
-		return(
-			
-				
-			<ul className="theList">
-				<h4>Your Options</h4>
-				{listItems}
-				
+		return (
 
+
+			<ul className="theList">
 				
+				
+				{listItems}
+
+
+
 			</ul>
-			
+
 		);
 	}
 };
