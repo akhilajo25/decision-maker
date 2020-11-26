@@ -15,22 +15,23 @@ class TodoItems extends Component {
 	
 	render() {
 		var todoEntries = this.props.entries;
-		console.log("the toofooo",todoEntries)
+		
 		var listItems = todoEntries.map(this.createTasks);
 		//var aa = this.props.doing;
 
 		return (
 
+			
 
-			<ul className="theList">
+			<center><ul className="theList">
 				
 				
 				{listItems}
 
 
 
-			</ul>
-
+			</ul></center>
+			
 		);
 	}
 };

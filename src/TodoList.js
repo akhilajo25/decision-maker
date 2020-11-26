@@ -60,33 +60,43 @@ class TodoList extends Component {
 	render(){
 		const enabled = ((this.state.items).length)>0;
 		return(
-
+			
+			
 			<div className="todoListMain">
 			  <div className="header">
-				  <h1>Super Decision Maker</h1>
-				  <p>Confused?? Put your choices in the hands of this app</p>
-				  <div><h4>Your Options</h4><button 
-				  
-				  onClick={() => this.deleteAll()}
-				  >
+			  <div className="topheader">
+					<h1>Super Decision Maker</h1>
+					<p>Confused?? Put your choices in the hands of this app</p>
+				</div>
+					<div className="center">
+					<div className="options">
+					<h4 >Your Options</h4>
+					<button 
+					onClick={() => this.deleteAll()}
+					>
 					  Remove all
-					</button></div>
-				  <button 
-				  disabled={!enabled}
-				  onClick={() => this.generateRandomtask()}
-				  >
+					</button>
+					</div>
+					<br></br>
+					<button 
+					className="longbutton"
+					disabled={!enabled}
+					onClick={() => this.generateRandomtask()}
+					>
 					  What should I do?
 					</button>
 					<br></br>
 					<h1>{this.state.assignedTask.text}</h1>
-				  <TodoItems entries={this.state.items} delete={this.deleteItem} doing={this.state.assignedTask} />
-			    <form onSubmit={this.addItem}>
-			      <input ref={(a) => this._inputElement = a} placeholder="Enter your option here">
-			      </input>
-			      <button type="submit">Add Option</button>
-			    </form>
+				  	<TodoItems entries={this.state.items} delete={this.deleteItem} doing={this.state.assignedTask} />
+					<form onSubmit={this.addItem}>
+					<input ref={(a) => this._inputElement = a} placeholder="Enter your option here">
+					</input>
+					<button type="submit">Add Option</button>
+					</form>
+					</div>
 			  </div>
-		        </div>
+			</div>
+			
 		);
 	}
 }
